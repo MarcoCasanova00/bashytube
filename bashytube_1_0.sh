@@ -1,7 +1,15 @@
 #!/bin/bash
 # requires ffmpeg, youtube-dl
 
-
+echo "  ___            _           ";
+echo " | _ ) __ _  ___| |_  _  _   ";
+echo " | _ \/ _\` |(_-<| ' \| || |  ";
+echo " |___/\__,_|/__/|_||_|\_, |  ";
+echo "  _____       _       |__/   ";
+echo " |_   _|_  _ | |__  ___  _ _ ";
+echo "   | | | || || '_ \/ -_)| '_|";
+echo "   |_|  \_,_||_.__/\___||_|  ";
+echo "                             ";
 
 # prompt for youtube link and use youtube-dl to download related mp3 file to present directory
 
