@@ -10,3 +10,5 @@ Next, follow the instructions.
 
 Enjoy your videos!
 
+Also, see a demo of a channel made with this script: https://www.youtube.com/channel/UCJSFRfzJzCNL5-HX6CRQw2w
+Please like and follow! :)
