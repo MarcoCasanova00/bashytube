@@ -1,0 +1,57 @@
+To optimize your Bash script, you can make a few improvements:
+
+1. Avoid unnecessary sleep commands: The `sleep` commands in your script can be removed as they don't serve any functional purpose.
+
+2. Utilize variables for formatting: Instead of explicitly specifying escape sequences for text formatting, you can assign them to variables and use the variables in your `echo` statements. This makes it easier to modify the formatting in the future.
+
+3. Improve readability and organization: You can structure your code to improve readability by separating different sections and adding comments to explain each section's purpose.
+
+Here's an optimized version of your code:
+
+```bash
+#!/bin/bash
+# Requires ffmpeg, youtube-dl
+
+# Formatting variables
+UYEL='\033[4;33m'
+NC='\033[0m'
+
+# ASCII art logo
+echo "  ___            _           ";
+echo " | _ ) __ _  ___| |_  _  _   ";
+echo " | _ \/ _\` |(_-<| ' \| || |  ";
+echo " |___/\__,_|/__/|_||_|\_, |  ";
+echo "  _____       _       |__/   ";
+echo " |_   _|_  _ | |__  ___  _ _ ";
+echo "   | | | || || '_ \/ -_)| '_|";
+echo "   |_|  \_,_||_.__/\___||_|  ";
+echo "                             ";
+echo "BashyTuber 1.0 by Marco Casanova"
+
+# Prompt for YouTube URL
+echo -e "${UYEL}Enter YouTube URL to download the mp3 from:${NC}"
+read varurl
+
+# Download mp3 using youtube-dl
+echo -e "${UYEL}Downloading $varurl... Please wait...${NC}"
+youtube-dl -x --audio-format mp3 -f bestaudio -o '%(view_count)s.%(ext)s' $varurl
+echo -e "${UYEL}Download completed. Check the directory where this script was run from.${NC}"
+
+# Prompt for mp3 file name
+echo -e "${UYEL}Enter the full name of the mp3 you wish to use: (Output will be empty if mp3 is absent from the directory.)${NC}"
+ls | grep ".mp3$"
+read MP3
+
+# Combine random image with mp3 using ffmpeg
+echo -e "${UYEL}Reading file...${NC}"
+
+# Select random image from the provided image_folder
+IMG="$(ls -1 classical_paintings/*.jpg | shuf -n 1)"
+
+# Create a video by combining the image and mp3 using ffmpeg
+ffmpeg -r 1 -loop 1 -i $IMG -i $MP3 -acodec copy -r 1 -shortest -vf scale=1280:720 ep1.flv 
+
+echo -e "${UYEL}Process completed. Goodbye!${NC}"
+```
+
+With these optimizations, your script should be more efficient, readable, and organized.
