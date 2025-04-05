@@ -1,4 +1,4 @@
-BashyTuber 1.0 - Made by Marco Casanova (aka Steve Lithium)
+BashyTuber 1.0 - Made by Marco Casanova
 
 This makes a video with the specified mp3 and a random image from a folder.
 
